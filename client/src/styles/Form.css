@@ -30,23 +30,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    min-height: 100vh;
 
-    background:
-        linear-gradient(rgba(2, 12, 36, .62),
-            rgba(2, 12, 36, .62)),
-        url('C:\Users\shoai\Desktop\internship-registration\client\public\background.png');
-
-    background-position: left;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-
-    display: flex;
-    justify-content: center;
-    padding: 40px;
-}
 
 /* MAIN FORM */
 
@@ -245,6 +229,55 @@ body {
 
 }
 
+
+/* ===========================
+   Technology Dropdown
+=========================== */
+
+.form-select {
+    width: 100%;
+    height: 64px;
+    padding: 0 22px;
+    border-radius: 20px;
+    border: 1.5px solid rgba(0, 224, 255, 0.35);
+    background: rgba(255, 255, 255, 0.08);
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 500;
+    outline: none;
+    transition: all .3s ease;
+    cursor: pointer;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 20px center;
+    background-size: 18px;
+}
+
+.form-select:hover {
+    border-color: #16d9ff;
+}
+
+.form-select:focus {
+    border-color: #16d9ff;
+    box-shadow: 0 0 18px rgba(22, 217, 255, .35);
+}
+
+.form-select option {
+    background: #123f78;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.form-select option:first-child {
+    color: #b8c4d9;
+}
+
 .form-input::placeholder {
 
     color:
@@ -338,5 +371,6 @@ body {
         font-size: 30px;
 
     }
+
 
 }
