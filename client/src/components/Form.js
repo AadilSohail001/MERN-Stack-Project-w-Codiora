@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import logo from "../assets/Codiora.png";
 import "../styles/Form.css";
 
 function Form() {
@@ -163,6 +164,12 @@ function Form() {
         <div className="internship-form">
 
             <div className="form-header">
+
+                <img
+                    src={logo}
+                    alt="Codiora Logo"
+                    className="header-logo"
+                />
 
                 <div className="form-badge">
 

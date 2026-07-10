@@ -1,10 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { lazy, Suspense } from "react";
 
 import Form from "./components/Form";
 import Records from "./components/Records";
-import StudentManagement from "./pages/StudentManagement";
 
 import "./App.css";
+
+// Lazy Loaded Page
+const StudentManagement = lazy(() =>
+  import("./pages/StudentManagement")
+);
 
 function App() {
 
@@ -12,39 +17,49 @@ function App() {
 
     <BrowserRouter>
 
-      <Routes>
+      <Suspense
+        fallback={
+          <div className="loading-page">
+            Loading...
+          </div>
+        }
+      >
 
-        <Route
+        <Routes>
 
-          path="/"
+          <Route
 
-          element={
+            path="/"
 
-            <div className="app-container">
+            element={
 
-              <main className="main-content">
+              <div className="app-container">
 
-                <Form />
+                <main className="main-content">
 
-                <Records />
+                  <Form />
 
-              </main>
+                  <Records />
 
-            </div>
+                </main>
 
-          }
+              </div>
 
-        />
+            }
 
-        <Route
+          />
 
-          path="/students"
+          <Route
 
-          element={<StudentManagement />}
+            path="/students"
 
-        />
+            element={<StudentManagement />}
 
-      </Routes>
+          />
+
+        </Routes>
+
+      </Suspense>
 
     </BrowserRouter>
 
